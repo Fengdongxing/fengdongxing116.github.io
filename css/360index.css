@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.section{
+    overflow: hidden;
+}
+/*第一屏样式*/
+.first{
+    padding-top:80px
+}
+.first .logo{
+    width: 251px;
+    height: 186px;
+    background: url("../images/logo.png");
+    margin:0 auto;
+}
+.first .text{
+    margin:80px 0 40px 0;
+    text-align: center;
+}
+.first .text > img{
+    margin:0px 25px;
+    opacity: 0.1;
+    /*添加过渡效果*/
+    transition: margin 3s,opacity 3s;
+}
+.first .info{
+    width: 772px;
+    height: 49px;
+    background: url("../images/info_1.png");
+    margin:0 auto;
+}
+/*第一屏动画*/
+.first.current .text > img{
+    opacity: 1;
+    margin: 0px 5px;
+}
+
+/*第二屏*/
+.second{}
+.second > div{
+    /*设置伸缩盒子*/
+    display: flex;
+    /*设置主轴方向：行排列*/
+    flex-direction: row;
+    /*设置主轴方向上的排列方式*/
+    justify-content: space-around;
+    /*设置侧轴方向上的排列方式*/
+    align-items: center;
+}
+.second .fields{
+    width:440px;
+    font-size: 0;
+}
+/*将盾牌打散*/
+.second .fields > img:nth-child(1){
+    transform: translate(400px,300px) rotate(57deg);
+}
+.second .fields > img:nth-child(2){
+    transform: translate(-400px,600px) rotate(34deg);
+}
+.second .fields > img:nth-child(3){
+    transform: translate(-200px,-300px) rotate(123deg);
+}
+.second .fields > img:nth-child(4){
+    transform: translate(-200px,-200px) rotate(-60deg);
+}
+.second .fields >img:nth-child(5){
+    transform: translate(150px,180px) rotate(90deg);
+}
+.second .fields >img:nth-child(6){
+    transform: translate(50px,-100px) rotate(-90deg);
+}
+.second .fields >img:nth-child(7){
+    transform: translate(-100px,50px) rotate(60deg);
+}
+.second .fields >img:nth-child(8){
+    transform: translate(10px,-200px) rotate(-60deg);
+}
+.second .fields >img:nth-child(9){
+    transform: translate(-200px,10px) rotate(30deg);
+}
+
+.second .info{
+    width: 635px;
+    height: 309px;
+    background: url("../images/info_2.png");
+}
+/*第二屏动画*/
+.second.current .fields > img{
+    transition:transform 1s;
+    /*transform: translate(0px,0px) rotate(0deg);*/
+    transform: none;
+}
+
+/*第三屏*/
+.third{
+    position: relative;
+}
+.third  .info{
+    width: 631px;
+    height: 278px;
+    background: url("../images/info_3.png");
+    position: absolute;
+    left:70px;
+    top:170px;
+}
+.third  .circle{
+    width: 453px;
+    height: 449px;
+    background: url("../images/circle.png");
+    position: absolute;
+    right: 70px;
+    top:150px;
+}
+.third  .circle > .rocket{
+    width: 203px;
+    height: 204px;
+    background: url("../images/rocket.png");
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-500%,200%);
+}
+/*第三屏动画*/
+.third.current  .circle > .rocket{
+    transition:transform 1s;
+    transform: translate(-50%,-50%);
+}
+
+/*第四屏*/
+.fourth{
+    position: relative;
+}
+.fourth .search{
+    width: 529px;
+    height: 400px;
+    position: absolute;
+    left:100px;
+    top:170px;
+    overflow: hidden;
+}
+.fourth .search > .box{
+    width: 529px;
+    height: 66px;
+    background: url("../images/search.png");
+    position: absolute;
+    /*搜索框默认在屏幕以外*/
+    transform: translateX(-100%);
+}
+.fourth .search > .text{
+    width: 0px;
+    height: 22px;
+    background: url("../images/key.png");
+    position: absolute;
+    left: 16px;
+    top: 20px;
+}
+.fourth .search > .result{
+    width: 529px;
+    height: 0px;
+    background: url("../images/result.png");
+    position: absolute;
+    left: 0px;
+    top: 52px;
+}
+.fourth  .info{
+    width: 612px;
+    height: 299px;
+    background: url("../images/info_4.png");
+    position: absolute;
+    right:100px;
+    top:170px;
+}
+/*第四屏动画*/
+.fourth.current .search > .box{
+    transition:transform 1s;
+    transform: translateX(0px);
+}
+.fourth.current .search > .text{
+    transition:width 1s 1.2s steps(5);
+    width: 99px;
+}
+.fourth.current .search > .result{
+    transition:height 1s 2.4s;
+    height:372px;
+}
